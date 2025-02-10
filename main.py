@@ -1,8 +1,6 @@
 import asyncio
 import logging
-import random
 from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.types import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
 
@@ -15,7 +13,6 @@ logger = logging.getLogger(__name__)
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
-dp.middleware.setup(LoggingMiddleware())
 
 user_data = {}
 
@@ -153,4 +150,4 @@ async def get_comment(message: types.Message):
     await message.reply("Жалобы отправлены!")
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True)start_polling(dp, skip_updates=True)
